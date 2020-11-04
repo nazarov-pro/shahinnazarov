@@ -1,215 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Shahin Nazarov Portfolio</title>
-    
-    <!-- Meta -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Shahin Nazarov portfolio">
-    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
+    <meta charset="UTF-8">
+    <title>Shahin Nazarov</title>
     <link rel="shortcut icon" href="favicon.ico">  
-    <!-- Google Font -->
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-    <!-- FontAwesome JS-->
-	<script defer src="assets/fontawesome/js/all.min.js"></script>
-    <!-- Global CSS -->
-    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
-    <!-- Theme CSS -->  
-    <link id="theme-style" rel="stylesheet" href="assets/css/orbit-1.css">
-</head> 
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-<body>
-    <div class="wrapper">
-        <div class="sidebar-wrapper">
-            <div class="profile-container">
-                <img class="profile" src="assets/images/profile-cropped.png" alt="Shahin Nazarov" />
-                <h1 class="name">Shahin Nazarov</h1>
-                <h3 class="tagline">Software Engineer</h3>
-            </div><!--//profile-container-->
-            
-            <div class="contact-container container-block">
-                <ul class="list-unstyled contact-list">
-                    <li class="email"><i class="fas fa-envelope"></i><a href="mailto: me@shahinnazarov.com">me@shahinnazarov.com</a></li>
-                    <li class="phone"><i class="fas fa-phone"></i><a href="tel:00994 70 890 09 99">+994 70 890 09 99</a></li>
-                    <li class="website"><i class="fas fa-globe"></i><a href="https://shahinnazarov.com/" target="_blank">shahinnazarov.com</a></li>
-                    <li class="linkedin"><i class="fab fa-linkedin-in"></i><a href="https://www.linkedin.com/in/shaheen-nazarov" target="_blank">in/shaheen-nazarov</a></li>
-                    <li class="github"><i class="fab fa-github"></i><a href="https://github.com/nazarov-pro" target="_blank">github.com/nazarov-pro</a></li>
-                    <li class="twitter"><i class="fab fa-twitter"></i><a href="https://twitter.com/shaheennazarov" target="_blank">@shaheennazarov</a></li>
-                </ul>
-            </div><!--//contact-container-->
-            <div class="education-container container-block">
-                <h2 class="container-block-title">Education</h2>
+        :root {
+            --background: white;
+            --primary: #1effc3;
+            --secondary: #1f9aff;
+            --card-size: 300px;
+        }
+
+        body {
+            height: 100vh;
+            margin: 0;
+            display: grid;
+            place-items: center;
+            padding: 1rem;
+            background: var(--background);
+            font-family: 'Source Code Pro', monospace;
+            text-rendering: optimizelegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .card {
+            width: calc(var(--card-size) * 1.586);
+            height: var(--card-size);
+            border-radius: 0.75rem;
+            box-shadow: 0 22px 70px 4px rgba(0, 0, 0, 0.56), 0 0 0 1px rgba(0, 0, 0, 0.3);
+            background: black;
+            display: grid;
+            grid-template-columns: 40% auto;
+            color: white;
+            align-items: center;
+            will-change: transform;
+            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card:hover {
+            transform: scale(1.1);
+            box-shadow: 0 32px 80px 14px rgba(0, 0, 0, 0.36), 0 0 0 1px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-details {
+            padding: 1rem;
+        }
+
+        .name {
+            font-size: 1.25rem;
+        }
+
+        .occupation {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .card-avatar {
+            display: grid;
+            place-items: center;
+        }
+
+        a {
+            color: var(--secondary);
+        }
+
+        svg {
+            fill: white;
+            width: 65%;
+        }
+
+        .card-about {
+            margin-top: 1rem;
+            /* display: grid; */
+            /* grid-auto-flow: column; */
+        }
+
+        .item {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 0.5rem;
+        }
+
+        .item .value {
+            font-size: 1rem;
+        }
+
+        .item .label {
+            margin-top: 0.15rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .skills {
+            display: flex;
+            flex-direction: column;
+            margin-top: 0.75rem;
+        }
+
+        .skills .label {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .skills .value {
+            margin-top: 0.15rem;
+            font-size: 0.75rem;
+            line-height: 1.25rem;
+        }
+    </style>
+    <script>
+        window.console = window.console || function (t) { };
+    </script>
+    <script>
+        if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage("resize", "*");
+        }
+    </script>
+
+
+</head>
+
+<body translate="no" data-new-gr-c-s-check-loaded="14.982.0">
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500" rel="stylesheet">
+
+    <div class="card">
+        <div class="card-avatar">
+            <p style="text-align: center;">
+                Welcome to my personal website !
+                <div class="skills" style="text-align: center;">
+                    Available links:
+                    <span class="value">
+                        <a href="resume.html">RESUME (CV)</a>
+                    </span>
+                    <span class="value">
+                        <a href="./">BLOG (NOT READY)</a>
+                    </span>
+                </div>
+            </p>
+        </div>
+        <div class="card-details">
+            <div class="name">Shahin Nazarov</div>
+            <div class="occupation">Software Engineer</div>
+
+            <div class="card-about">
                 <div class="item">
-                    <h4 class="degree">MSc in Computer Science</h4>
-                    <h5 class="meta">University of London</h5>
-	                    <div class="time">2016 - 2018</div>
-                </div><!--//item-->
+                    <span class="value">+994 70 890 09 99</span>
+                    <span class="label">Mobile Phone</span>
+                </div>
                 <div class="item">
-                    <h4 class="degree">BSc in Applied Mathematics</h4>
-                    <h5 class="meta">Bristol University</h5>
-                    <div class="time">2011 - 2015</div>
-                </div><!--//item-->
-            </div><!--//education-container-->
-            
-            <div class="languages-container container-block">
-                <h2 class="container-block-title">Languages</h2>
-                <ul class="list-unstyled interests-list">
-                    <li>English <span class="lang-desc">(Native)</span></li>
-                    <li>French <span class="lang-desc">(Professional)</span></li>
-                    <li>Spanish <span class="lang-desc">(Professional)</span></li>
-                </ul>
-            </div><!--//interests-->
-            
-            <div class="interests-container container-block">
-                <h2 class="container-block-title">Interests</h2>
-                <ul class="list-unstyled interests-list">
-                    <li>Climbing</li>
-                    <li>Snowboarding</li>
-                    <li>Cooking</li>
-                </ul>
-            </div><!--//interests-->
-            
-        </div><!--//sidebar-wrapper-->
-        
-        <div class="main-wrapper">
-            
-            <section class="section summary-section">
-                <h2 class="section-title"><span class="icon-holder"><i class="fas fa-user"></i></span>Career Profile</h2>
-                <div class="summary">
-                    <p>Summarise your career here lorem ipsum dolor sit amet, consectetuer adipiscing elit. You can <a href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/orbit-free-resume-cv-bootstrap-theme-for-developers/" target="_blank">download this free resume/CV template here</a>. Aenean commodo ligula eget dolor aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu.</p>
-                </div><!--//summary-->
-            </section><!--//section-->
-            
-            <section class="section experiences-section">
-                <h2 class="section-title"><span class="icon-holder"><i class="fas fa-briefcase"></i></span>Experiences</h2>
-                
-                <div class="item">
-                    <div class="meta">
-                        <div class="upper-row">
-                            <h3 class="job-title">Lead Developer</h3>
-                            <div class="time">2019 - Present</div>
-                        </div><!--//upper-row-->
-                        <div class="company">Startup Hubs, San Francisco</div>
-                    </div><!--//meta-->
-                    <div class="details">
-                        <p>Describe your role here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo.</p>  
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. </p>
-                    </div><!--//details-->
-                </div><!--//item-->
-                
-                <div class="item">
-                    <div class="meta">
-                        <div class="upper-row">
-                            <h3 class="job-title">Senior Software Engineer</h3>
-                            <div class="time">2018 - 2019</div>
-                        </div><!--//upper-row-->
-                        <div class="company">Google, London</div>
-                    </div><!--//meta-->
-                    <div class="details">
-                        <p>Describe your role here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>  
-                        
-                    </div><!--//details-->
-                </div><!--//item-->
-                
-                <div class="item">
-                    <div class="meta">
-                        <div class="upper-row">
-                            <h3 class="job-title">UI Developer</h3>
-                            <div class="time">2016 - 2018</div>
-                        </div><!--//upper-row-->
-                        <div class="company">Amazon, London</div>
-                    </div><!--//meta-->
-                    <div class="details">
-                        <p>Describe your role here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>  
-                    </div><!--//details-->
-                </div><!--//item-->
-                
-            </section><!--//section-->
-            
-            <section class="section projects-section">
-                <h2 class="section-title"><span class="icon-holder"><i class="fas fa-archive"></i></span>Projects</h2>
-                <div class="intro">
-                    <p>You can list your side projects or open source libraries in this section. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et ligula in nunc bibendum fringilla a eu lectus.</p>
-                </div><!--//intro-->
-                <div class="item">
-                    <span class="project-title"><a href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/coderpro-bootstrap-4-startup-template-for-software-projects/" target="_blank">CoderPro</a></span> - <span class="project-tagline">A responsive website template designed to help developers launch their software projects. </span>
-                    
-                </div><!--//item-->
-                <div class="item">
-                    <span class="project-title"><a href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/launch-bootstrap-4-template-for-saas-businesses/" target="_blank">Launch</a></span> - <span class="project-tagline">A responsive website template designed to help startups promote their products or services.</span>
-                </div><!--//item-->
-                <div class="item">
-                    <span class="project-title"><a href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/devcard-bootstrap-4-vcard-portfolio-template-for-software-developers/" target="_blank">DevCard</a></span> - <span class="project-tagline">A portfolio website template designed for software developers.</span>
-                </div><!--//item-->
-                <div class="item">
-                    <span class="project-title"><a href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/bootstrap-template-for-mobile-apps-nova-pro/" target="_blank">Nova Pro</a></span> - <span class="project-tagline">A responsive Bootstrap theme designed to help app developers promote their mobile apps</span>
-                </div><!--//item-->
-                <div class="item">
-                    <span class="project-title"><a href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-web-development-agencies-devstudio/" target="_blank">DevStudio</a></span> - 
-                    <span class="project-tagline">A responsive website template designed to help web developers/designers market their services. </span>
-                </div><!--//item-->
-            </section><!--//section-->
-            
-            <section class="skills-section section">
-                <h2 class="section-title"><span class="icon-holder"><i class="fas fa-rocket"></i></span>Skills &amp; Proficiency</h2>
-                <div class="skillset">        
-                    <div class="item">
-                        <h3 class="level-title">Python &amp; Django</h3>
-                        <div class="progress level-bar">
-						    <div class="progress-bar theme-progress-bar" role="progressbar" style="width: 99%" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100"></div>
-						</div>                               
-                    </div><!--//item-->
-                    
-                    <div class="item">
-                        <h3 class="level-title">Javascript &amp; jQuery</h3>
-                        <div class="progress level-bar">
-						    <div class="progress-bar theme-progress-bar" role="progressbar" style="width: 98%" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"></div>
-						</div>                              
-                    </div><!--//item-->
-                    
-                    <div class="item">
-                        <h3 class="level-title">Angular</h3>
-                        <div class="progress level-bar">
-						    <div class="progress-bar theme-progress-bar" role="progressbar" style="width: 98%" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"></div>
-						</div>                                 
-                    </div><!--//item-->
-                    
-                    <div class="item">
-                        <h3 class="level-title">HTML5 &amp; CSS</h3>
-                        <div class="progress level-bar">
-							    <div class="progress-bar theme-progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-						</div>                                
-                    </div><!--//item-->
-                    
-                    <div class="item">
-                        <h3 class="level-title">Ruby on Rails</h3>
-                        <div class="progress level-bar">
-						    <div class="progress-bar theme-progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-						</div>                                  
-                    </div><!--//item-->
-                    
-                    <div class="item">
-                        <h3 class="level-title">Sketch &amp; Photoshop</h3>
-                        <div class="progress level-bar">
-						    <div class="progress-bar theme-progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-						</div>                                 
-                    </div><!--//item-->
-                    
-                </div>  
-            </section><!--//skills-section-->
-            
-        </div><!--//main-body-->
+                    <span class="value">me@shahinnazarov.com</span>
+                    <span class="label">Email</span>
+                </div>
+
+            </div>
+        </div>
     </div>
- 
-    <footer class="footer">
-        <div class="text-center">
-            <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
-            <small class="copyright">Designed with <i class="fas fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
-        </div><!--//container-->
-    </footer><!--//footer-->
-        
-</body>
-</html> 
 
+</body>
+
+</html>
